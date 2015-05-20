@@ -25,15 +25,7 @@
 
 "use strict";
 
-exports.iotdb_module = true;
-
 var mqtt = require('mqtt');
 for (var xi in mqtt) {
     exports[xi] = mqtt[xi];
 }
-
-exports.setup = function (iotdb) {
-    iotdb.mqtt = function () {
-        return mqtt;
-    };
-};
